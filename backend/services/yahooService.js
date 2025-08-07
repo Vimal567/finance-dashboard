@@ -5,7 +5,7 @@ const getCMP = async (symbol) => {
   try {
     const quote = await yahooFinance.quote(symbol);
     return {
-      cmp: quote.regularMarketPrice,
+      cmp: quote?.regularMarketPrice | 0,
     };
   } catch (error) {
     console.error("Yahoo fetch error:", error);

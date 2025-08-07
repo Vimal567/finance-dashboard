@@ -2,7 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
-const stockRoutes = require('./routes/stocks.route.js');
 const portfolioRoutes = require('./routes/portfolio.route.js');
 
 const app = express();
@@ -15,7 +14,6 @@ app.use(express.json());
 // Default Route
 app.get('/', (req, res) => res.send("Api is working!"));
 
-app.use('/api/stocks', stockRoutes);
 app.use('/api/portfolio', portfolioRoutes);
 
 app.listen(PORT, () => {
